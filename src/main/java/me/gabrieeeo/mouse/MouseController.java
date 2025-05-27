@@ -7,6 +7,7 @@ public class MouseController {
 
     private static Robot robot;
 
+    //Construtor da classe chamado automaticamente (Estou adicionando o objeto Robot na classe MouseController)
     public MouseController() throws AWTException {
         robot = new Robot();
     }
