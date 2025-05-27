@@ -18,7 +18,7 @@ public class Main {
         try {
             mouseController = new MouseController();
         } catch (AWTException e) {
-            System.out.println("Error intialize 'MouseController':" + e.getMessage());
+            System.out.println("Error initialize 'MouseController':" + e.getMessage());
             return;
         }
 
