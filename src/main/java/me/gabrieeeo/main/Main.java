@@ -10,6 +10,7 @@ import java.util.TimerTask;
 public class Main {
 
     final private static Timer timer = new Timer();
+    private static MouseController mouseController;
 
     public static void main(String[] args) {
 
@@ -20,11 +21,14 @@ public class Main {
 
                 //Executar cliques em determinada posição
                 try {
-                    MouseController.click(887, 700);
+                    mouseController = new MouseController();
+                    mouseController.click(887, 700);
                     Thread.sleep(500);
-                    MouseController.click(738, 600);
+                    mouseController.click(738, 600);
                 }catch (InterruptedException e) {
                     System.out.println("Thread error: " + e.getMessage());
+                } catch (AWTException e) {
+                    System.out.println("Thread merror: " + e.getMessage());
                 }
             }
         },0, 1500);
