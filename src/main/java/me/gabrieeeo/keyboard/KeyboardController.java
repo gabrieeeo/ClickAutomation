@@ -1,6 +1,7 @@
 package me.gabrieeeo.keyboard;
 
 import java.awt.*;
+import java.awt.event.InputEvent;
 
 public class KeyboardController {
 
@@ -9,4 +10,9 @@ public class KeyboardController {
     public KeyboardController() throws AWTException {
         this.robot = new Robot();
     }
+
+    public void clickKey() {
+        System.out.println("teste");
+    }
+
 }

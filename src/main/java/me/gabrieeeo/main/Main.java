@@ -1,9 +1,11 @@
 package me.gabrieeeo.main;
 
+import me.gabrieeeo.keyboard.KeyboardController;
 import me.gabrieeeo.mouse.MouseController;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -11,6 +13,7 @@ public class Main {
 
     final private static Timer timer = new Timer();
     private static MouseController mouseController;
+    private static KeyboardController keyboardController;
 
     public static void main(String[] args) {
 
