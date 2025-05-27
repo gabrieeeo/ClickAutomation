@@ -1,5 +1,7 @@
 package me.gabrieeeo.main;
 
+import me.gabrieeeo.mouse.MouseController;
+
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.util.Timer;
@@ -11,7 +13,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         //Agendar tarefa para ser executada a cada 5 segundos
         timer.schedule(new TimerTask() {
             @Override
@@ -19,23 +20,11 @@ public class Main {
 
                 //Executar cliques em determinada posição
                 try {
-                    Robot robot = new Robot();
-                    robot.mouseMove(887, 700); //Localização do mouse
-                    robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); //Pressionar
-                    robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); //Soltar
-
-                    //Após primeiro clique, seguir segundo clique
-                    try {
-                        Thread.sleep(500);
-                        robot.mouseMove(738, 600); //Localização do mouse
-                        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); //Pressionar
-                        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); //Soltar
-                    }catch (InterruptedException ie) {
-                        System.out.println("Ocorreu uma exceção Interrupted: " + ie.getMessage());
-                    }
-
-                }catch(AWTException e) {
-                    System.out.println("Ocorreu uma exceção AWT: " + e.getMessage());
+                    MouseController.click(887, 700);
+                    Thread.sleep(500);
+                    MouseController.click(738, 600);
+                }catch (InterruptedException e) {
+                    System.out.println("Thread error: " + e.getMessage());
                 }
             }
         },0, 1500);
