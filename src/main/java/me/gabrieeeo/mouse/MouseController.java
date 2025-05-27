@@ -12,11 +12,8 @@ public class MouseController {
     }
 
     public static void click(int x, int y) {
-
-        robot.mouseMove(887, 700); //Localização do mouse
+        robot.mouseMove(x, y); //Localização do mouse
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK); //Pressionar
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK); //Soltar
-
     }
-
 }
