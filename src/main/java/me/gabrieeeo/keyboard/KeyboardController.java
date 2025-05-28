@@ -10,13 +10,14 @@ import java.awt.event.InputEvent;
 
 public class KeyboardController implements NativeKeyListener {
 
-    public void keyPressQuit(NativeKeyEvent e) {
+    public void nativeKeyPressed(NativeKeyEvent e) {
+        System.out.println("Pressione a letra 'Q' para encerrar a automação.");
         if (e.getKeyCode() == NativeKeyEvent.VC_Q) {
             System.out.println("Você pressionou Q. Encerrando...");
             try {
                 GlobalScreen.unregisterNativeHook();
             } catch (NativeHookException ex) {
-                ex.printStackTrace();
+                System.out.println("Error unregister Native Hook: " + ex.getMessage());
             }
             System.exit(0);
         }

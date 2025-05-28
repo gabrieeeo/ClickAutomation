@@ -19,15 +19,13 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Registrar 'NativeHook'
         try {
             GlobalScreen.registerNativeHook();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Error register Native Hook: " + e.getMessage());
         }
-
         GlobalScreen.addNativeKeyListener(new KeyboardController());
-
-        /*
 
         //Inicializar 'MouseController'
         try {
@@ -51,7 +49,5 @@ public class Main {
                 }
             }
         },0, 1500);
-
-         */
     }
 }
