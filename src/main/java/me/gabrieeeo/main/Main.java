@@ -1,14 +1,10 @@
 package me.gabrieeeo.main;
 
 import com.github.kwhat.jnativehook.GlobalScreen;
-import com.github.kwhat.jnativehook.NativeHookException;
-import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 import me.gabrieeeo.keyboard.KeyboardController;
 import me.gabrieeeo.mouse.MouseController;
 
 import java.awt.*;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 

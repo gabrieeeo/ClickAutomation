@@ -9,7 +9,8 @@ public class KeyboardController implements NativeKeyListener {
 
     public void nativeKeyPressed(NativeKeyEvent e) {
         if (e.getKeyCode() == NativeKeyEvent.VC_Q) {
-            System.out.println("Você pressionou a tecla 'Q'. Encerrando automação...");
+            System.out.println("Você pressionou a tecla 'Q'.");
+            System.out.println("Encerrando automação...");
             try {
                 GlobalScreen.unregisterNativeHook();
             } catch (NativeHookException ex) {
