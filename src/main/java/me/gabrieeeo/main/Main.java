@@ -2,11 +2,10 @@ package me.gabrieeeo.main;
 
 import com.github.kwhat.jnativehook.GlobalScreen;
 import me.gabrieeeo.keyboard.KeyboardController;
+import me.gabrieeeo.menu.Menu;
 import me.gabrieeeo.mouse.MouseController;
 
-import java.awt.*;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class Main {
 
@@ -14,6 +13,9 @@ public class Main {
     private static MouseController mouseController;
 
     public static void main(String[] args) {
+
+        //Iniciar 'Menu'
+        Menu menu = new Menu();
 
         //Registrar 'NativeHook'
         try {
@@ -23,6 +25,7 @@ public class Main {
         }
         GlobalScreen.addNativeKeyListener(new KeyboardController());
 
+        /*
         //Inicializar 'MouseController'
         try {
             mouseController = new MouseController();
@@ -45,5 +48,7 @@ public class Main {
                 }
             }
         },0, 1500);
+
+         */
     }
 }
