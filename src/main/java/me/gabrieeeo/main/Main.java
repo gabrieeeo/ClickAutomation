@@ -1,5 +1,8 @@
 package me.gabrieeeo.main;
 
+import com.github.kwhat.jnativehook.GlobalScreen;
+import com.github.kwhat.jnativehook.NativeHookException;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 import me.gabrieeeo.keyboard.KeyboardController;
 import me.gabrieeeo.mouse.MouseController;
 
@@ -13,9 +16,18 @@ public class Main {
 
     final private static Timer timer = new Timer();
     private static MouseController mouseController;
-    private static KeyboardController keyboardController;
 
     public static void main(String[] args) {
+
+        try {
+            GlobalScreen.registerNativeHook();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        GlobalScreen.addNativeKeyListener(new KeyboardController());
+
+        /*
 
         //Inicializar 'MouseController'
         try {
@@ -39,5 +51,7 @@ public class Main {
                 }
             }
         },0, 1500);
+
+         */
     }
 }
